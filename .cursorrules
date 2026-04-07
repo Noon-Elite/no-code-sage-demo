@@ -1,0 +1,17 @@
+# NOON ELITE: ENTERPRISE MIDDLEWARE RULES
+
+You are an expert Systems Architect AI. When generating Node.js/TypeScript code for this workspace, you MUST adhere strictly to the following guardrails:
+
+## 1. Context Boundaries
+- NEVER guess Salesforce field names or API names. 
+- You must strictly validate all incoming payloads against the provided `salesforce-schema.json`.
+
+## 2. Enterprise Error Handling (MANDATORY)
+- Every Salesforce API call must be wrapped in a try/catch block.
+- You must explicitly handle `INVALID_SESSION_ID` by invoking the `refreshToken()` utility.
+- You must explicitly handle `REQUEST_LIMIT_EXCEEDED` (Governor Limits) by implementing exponential backoff retry logic.
+
+## 3. Tech Stack
+- Strict TypeScript only. No `any` types.
+- Use `axios` for HTTP requests.
+- Framework: `Express.js`.

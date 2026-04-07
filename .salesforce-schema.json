@@ -1,0 +1,34 @@
+{
+  "ObjectName": "Billing_Event__c",
+  "Description": "Custom object storing enterprise billing webhooks before processing.",
+  "Fields": [
+    {
+      "Name": "Id",
+      "Type": "Id",
+      "Required": true
+    },
+    {
+      "Name": "Stripe_Invoice_ID__c",
+      "Type": "String",
+      "Length": 255,
+      "Required": true
+    },
+    {
+      "Name": "Total_Amount__c",
+      "Type": "Currency",
+      "Required": true
+    },
+    {
+      "Name": "Payment_Status__c",
+      "Type": "Picklist",
+      "Values": ["Pending", "Paid", "Failed"],
+      "Required": true
+    },
+    {
+      "Name": "Account__c",
+      "Type": "Reference",
+      "ReferenceTo": "Account",
+      "Required": true
+    }
+  ]
+}
